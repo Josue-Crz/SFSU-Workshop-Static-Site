@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Josue Cruz | CS Portfolio</title>
+    <meta
+      name="description"
+      content="Single-page portfolio for Josue Cruz, a Computer Science student at SFSU."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Josue Cruz home">
+        <span class="brand-mark">JC</span>
+        <span>Josue Cruz</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero section-shell" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">CS @ SFSU</p>
+          <h1 id="hero-title">Josue Cruz</h1>
+          <p class="tagline">Product-minded, building innovative projects</p>
+          <p class="hero-text">
+            Computer Science student focused on technical program management,
+            software engineering, open-source collaboration, and practical
+            products that turn messy real-world needs into coordinated execution.
+          </p>
+          <a class="primary-action" href="mailto:josuecruz3830@gmail.com">
+            Email Josue
+          </a>
+        </div>
+
+        <div class="hero-terminal" aria-label="Portfolio summary">
+          <div class="terminal-top">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="terminal-body">
+            <p><span>$</span> profile --focus</p>
+            <p>technical product builder</p>
+            <p><span>$</span> strengths</p>
+            <ul>
+              <li>Security-focused development</li>
+              <li>Technical documentation</li>
+              <li>Sponsor outreach and team coordination</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="about section-shell" id="about" aria-labelledby="about-title">
+        <div class="section-heading">
+          <p class="eyebrow">About</p>
+          <h2 id="about-title">A CS student building with a product lens.</h2>
+        </div>
+        <p>
+          I study Computer Science at San Francisco State University and enjoy
+          learning how systems work from lower-level software to full-stack
+          applications. My best work sits where engineering, user needs, and
+          execution meet: writing technical docs, testing assumptions, and
+          helping teams move prototypes toward shipped demos.
+        </p>
+      </section>
+
+      <section
+        class="projects section-shell"
+        id="projects"
+        aria-labelledby="projects-title"
+      >
+        <div class="section-heading">
+          <p class="eyebrow">Selected Projects</p>
+          <h2 id="projects-title">Work with product, engineering, and coordination signals.</h2>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <p class="project-kicker">Open Source / Security</p>
+            <h3>Keyshade.io Input Field Sanitation</h3>
+            <p>
+              Contributed security-focused validation improvements to an
+              open-source secrets platform. Helped address unsafe user input
+              through schema-driven checks and contributor coordination.
+            </p>
+            <div class="tag-list" aria-label="Technology stack">
+              <span>TypeScript</span>
+              <span>Zod</span>
+              <span>Next.js</span>
+              <span>NestJS</span>
+              <span>GitHub</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <p class="project-kicker">AI / Full Stack</p>
+            <h3>CouchMunch</h3>
+            <p>
+              Built an AI-powered food recommendation app that translates
+              cravings and location into nearby restaurant combos. Explored
+              deployment tradeoffs, API fallbacks, and prompt-driven iteration.
+            </p>
+            <div class="tag-list" aria-label="Technology stack">
+              <span>Next.js</span>
+              <span>React</span>
+              <span>Tailwind CSS</span>
+              <span>Node.js</span>
+              <span>Express</span>
+              <span>OpenAI</span>
+              <span>Yelp Fusion</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <p class="project-kicker">IoT / Hackathon</p>
+            <h3>GreenSense</h3>
+            <p>
+              Created a full-stack IoT climate monitoring product for
+              energy-aware HVAC decisions. Connected Arduino sensor data,
+              real-time telemetry, and AI-assisted room suggestions.
+            </p>
+            <div class="tag-list" aria-label="Technology stack">
+              <span>JavaScript</span>
+              <span>Python</span>
+              <span>C++</span>
+              <span>Arduino</span>
+              <span>Flask</span>
+              <span>React</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="skills section-shell" id="skills" aria-labelledby="skills-title">
+        <div class="section-heading">
+          <p class="eyebrow">Skills</p>
+          <h2 id="skills-title">Tools and habits used to build, coordinate, and communicate.</h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3>Frontend</h3>
+            <div class="skill-cloud">
+              <span>React</span>
+              <span>Next.js</span>
+              <span>JavaScript</span>
+              <span>TypeScript</span>
+              <span>Tailwind CSS</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3>Backend & APIs</h3>
+            <div class="skill-cloud">
+              <span>Python</span>
+              <span>Flask</span>
+              <span>NestJS</span>
+              <span>Node.js</span>
+              <span>Express</span>
+              <span>REST APIs</span>
+              <span>Firebase</span>
+              <span>Google Cloud</span>
+              <span>OpenAI</span>
+              <span>Yelp Fusion</span>
+              <span>Zod</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3>Systems & IoT</h3>
+            <div class="skill-cloud">
+              <span>C</span>
+              <span>C++</span>
+              <span>Java</span>
+              <span>Linux</span>
+              <span>Arduino</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3>Collaboration</h3>
+            <div class="skill-cloud">
+              <span>Git</span>
+              <span>GitHub</span>
+              <span>Technical Documentation</span>
+              <span>Stakeholder Communication</span>
+              <span>Project Coordination</span>
+              <span>Agile Collaboration</span>
+              <span>Team Leadership</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="contact section-shell"
+        id="contact"
+        aria-labelledby="contact-title"
+      >
+        <div class="section-heading">
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">Let&apos;s build the next useful thing.</h2>
+        </div>
+        <a class="email-link" href="mailto:josuecruz3830@gmail.com">
+          josuecruz3830@gmail.com
+        </a>
+      </section>
+    </main>
+  </body>
+</html>

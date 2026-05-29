@@ -10,6 +10,8 @@
   --green: #9cf86f;
   --yellow: #f6d86d;
   --violet: #9b8cff;
+  --bronze: #c47a3a;
+  --bronze-soft: rgba(196, 122, 58, 0.18);
   --shadow: 0 24px 80px rgba(0, 0, 0, 0.36);
 }
 
@@ -98,6 +100,7 @@ a {
 }
 
 .site-nav a {
+  flex: 0 0 auto;
   padding: 0.55rem 0.8rem;
   border-radius: 999px;
   color: var(--muted);
@@ -245,6 +248,7 @@ h1 {
 
 .about,
 .projects,
+.smartcane,
 .skills,
 .contact {
   padding: 4rem 0;
@@ -276,12 +280,16 @@ h1 {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
+  perspective: 1200px;
 }
 
 .project-card,
-.skill-group {
+.skill-group,
+.smart-panel,
+.feature-card,
+.repo-details {
   border: 1px solid var(--line);
   border-radius: 0.9rem;
   background: rgba(16, 21, 19, 0.82);
@@ -289,10 +297,61 @@ h1 {
 }
 
 .project-card {
+  position: relative;
   display: flex;
-  min-height: 26rem;
+  min-height: 29rem;
   flex-direction: column;
+  overflow: hidden;
   padding: 1.35rem;
+  scroll-snap-align: start;
+  transform-style: preserve-3d;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.project-card:hover {
+  border-color: rgba(72, 227, 212, 0.42);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.28);
+  transform: translateY(-0.35rem) rotateX(1.5deg) rotateY(-1.5deg);
+}
+
+.project-card--winner {
+  border-color: rgba(196, 122, 58, 0.62);
+  background:
+    linear-gradient(180deg, rgba(196, 122, 58, 0.22), rgba(16, 21, 19, 0.72) 34%),
+    rgba(16, 21, 19, 0.86);
+}
+
+.project-card--winner::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background: linear-gradient(135deg, rgba(255, 214, 137, 0.2), transparent 38%);
+}
+
+.award-front {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: -1.35rem -1.35rem 1.2rem;
+  padding: 0.9rem 1.35rem;
+  border-bottom: 1px solid rgba(196, 122, 58, 0.42);
+  color: #fff7eb;
+  background:
+    linear-gradient(135deg, rgba(196, 122, 58, 0.96), rgba(94, 57, 28, 0.9)),
+    var(--bronze);
+}
+
+.award-front span {
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .project-kicker {
@@ -342,6 +401,214 @@ h1 {
   font-weight: 800;
 }
 
+.smartcane-lead,
+.smart-panels,
+.setup-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 1rem;
+}
+
+.smartcane-lead {
+  align-items: stretch;
+  margin-bottom: 1rem;
+}
+
+.smartcane-summary {
+  height: 100%;
+  margin: 0;
+  padding: 1.35rem;
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  color: var(--muted);
+  background: rgba(16, 21, 19, 0.72);
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+.win-callout {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(196, 122, 58, 0.45);
+  border-radius: 0.9rem;
+  background: var(--bronze-soft);
+}
+
+.win-callout span {
+  color: #ffd99b;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.win-callout p {
+  margin: 0;
+  color: #ffe7bf;
+  line-height: 1.6;
+}
+
+.vision-quote {
+  margin: 0;
+  padding: 1.35rem;
+  border: 1px solid rgba(72, 227, 212, 0.24);
+  border-radius: 0.9rem;
+  color: #d9fff7;
+  background: rgba(72, 227, 212, 0.07);
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.65;
+}
+
+.smart-panels {
+  margin-top: 1rem;
+}
+
+.smart-panels--compact {
+  align-items: start;
+}
+
+.smart-panel,
+.feature-card,
+.repo-details {
+  padding: 1.35rem;
+}
+
+.smart-panel h3,
+.feature-card h3,
+.repo-details h3 {
+  margin-bottom: 0.8rem;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+.smart-list {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.data-table {
+  display: grid;
+  grid-template-columns: minmax(9rem, 0.52fr) minmax(0, 1fr);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+}
+
+.data-table div {
+  padding: 0.8rem;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.data-table div:nth-child(2n) {
+  border-right: 0;
+}
+
+.data-table div:nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+
+.data-table div:nth-child(-n + 2) {
+  color: var(--text);
+  font-weight: 900;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.data-table div:nth-child(odd):not(:nth-child(1)) {
+  color: #d8fff9;
+  font-weight: 800;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.feature-card p:first-child {
+  margin-bottom: 0.65rem;
+  color: var(--green);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.feature-card p:last-child {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.smart-tags {
+  margin-top: 0.2rem;
+}
+
+.repo-details {
+  margin-top: 1rem;
+}
+
+.repo-details summary {
+  cursor: pointer;
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 900;
+}
+
+.repo-details summary::marker {
+  color: var(--green);
+}
+
+.repo-details pre {
+  overflow-x: auto;
+  margin: 1rem 0 0;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  color: #d9fff7;
+  background: rgba(5, 6, 5, 0.72);
+}
+
+.repo-details code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.9rem;
+}
+
+.setup-grid {
+  margin-top: 1rem;
+}
+
+.setup-grid h3 {
+  color: var(--text);
+}
+
+.setup-grid ol {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.setup-grid code {
+  color: #d9fff7;
+}
+
+.out-of-scope {
+  margin-top: 1rem;
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -363,10 +630,41 @@ h1 {
   padding-bottom: 6rem;
 }
 
+.contact-title {
+  max-width: 16ch;
+  margin-bottom: 2rem;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  line-height: 1.02;
+  letter-spacing: 0;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.contact-details .eyebrow {
+  margin: 0;
+}
+
 .email-link {
   width: min(100%, 30rem);
   padding: 1rem 1.15rem;
   font-size: clamp(1.02rem, 3vw, 1.35rem);
+}
+
+@media (max-width: 1100px) {
+  .project-grid {
+    grid-auto-columns: minmax(18rem, 72%);
+    grid-auto-flow: column;
+    grid-template-columns: none;
+    overflow-x: auto;
+    padding-bottom: 0.85rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-color: rgba(72, 227, 212, 0.5) rgba(255, 255, 255, 0.06);
+  }
 }
 
 @media (max-width: 860px) {
@@ -378,14 +676,17 @@ h1 {
 
   .site-nav {
     width: 100%;
-    justify-content: space-between;
+    justify-content: flex-start;
     overflow-x: auto;
   }
 
   .hero,
   .section-heading,
-  .project-grid,
-  .skills-grid {
+  .skills-grid,
+  .smartcane-lead,
+  .smart-panels,
+  .setup-grid,
+  .feature-grid {
     grid-template-columns: 1fr;
   }
 
@@ -405,6 +706,7 @@ h1 {
 
   .about,
   .projects,
+  .smartcane,
   .skills,
   .contact {
     padding: 3.5rem 0;
@@ -416,9 +718,14 @@ h1 {
 }
 
 @media (max-width: 560px) {
+  .site-nav {
+    justify-content: space-between;
+    overflow: visible;
+  }
+
   .site-nav a {
-    padding: 0.5rem 0.65rem;
-    font-size: 0.85rem;
+    padding: 0.48rem 0.42rem;
+    font-size: 0.74rem;
   }
 
   .brand {
@@ -432,5 +739,36 @@ h1 {
 
   .project-card {
     min-height: auto;
+  }
+
+  .project-grid {
+    grid-auto-columns: minmax(16.5rem, 88%);
+  }
+
+  .data-table {
+    grid-template-columns: 1fr;
+  }
+
+  .data-table div:nth-child(-n + 2) {
+    display: none;
+  }
+
+  .data-table div,
+  .data-table div:nth-child(2n),
+  .data-table div:nth-last-child(-n + 2) {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .data-table div:last-child {
+    border-bottom: 0;
+  }
+
+  .data-table div:nth-child(odd):not(:nth-child(1)) {
+    padding-bottom: 0.25rem;
+  }
+
+  .data-table div:nth-child(even) {
+    padding-top: 0.25rem;
   }
 }

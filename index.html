@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -25,6 +25,7 @@
       <nav class="site-nav" aria-label="Primary navigation">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
+        <a href="#smartcane">SmartCane</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -86,10 +87,34 @@
       >
         <div class="section-heading">
           <p class="eyebrow">Selected Projects</p>
-          <h2 id="projects-title">Work with product, engineering, and coordination signals.</h2>
+          <h2 id="projects-title">
+            Work with product, engineering, and coordination signals.
+          </h2>
         </div>
 
         <div class="project-grid">
+          <article class="project-card project-card--winner">
+            <div class="award-front">
+              <span>2nd Place</span>
+              <span>AI + IoT Track</span>
+            </div>
+            <p class="project-kicker">HackStorm 2.0 / Assistive Tech</p>
+            <h3>SmartCane</h3>
+            <p>
+              Built an AI-powered mobility cane that combines computer vision,
+              ultrasonic sensing, IMU fall detection, and audio feedback to
+              support blind and visually impaired navigation.
+            </p>
+            <div class="tag-list" aria-label="Technology stack">
+              <span>Python</span>
+              <span>OpenCV</span>
+              <span>YOLOv8</span>
+              <span>Arduino</span>
+              <span>C++</span>
+              <span>Tuya T5-A1</span>
+            </div>
+          </article>
+
           <article class="project-card">
             <p class="project-kicker">Open Source / Security</p>
             <h3>Keyshade.io Input Field Sanitation</h3>
@@ -146,6 +171,231 @@
         </div>
       </section>
 
+      <section
+        class="smartcane section-shell"
+        id="smartcane"
+        aria-labelledby="smartcane-title"
+      >
+        <div class="section-heading">
+          <p class="eyebrow">HackStorm 2.0 - AI + IoT Track</p>
+          <h2 id="smartcane-title">SmartCane &mdash; AI IoT Hackathon</h2>
+        </div>
+
+        <div class="smartcane-lead">
+          <div>
+            <p class="smartcane-summary">
+              SmartCane is an AI-powered cane that gives blind and visually
+              impaired users passive, always-on environmental awareness. Sensors
+              mounted near the handle run continuously, forming a coverage cone
+              from floor level to overhead so users do not need to sweep for
+              every hazard. Built with teammate Nergiz Rahimzade, with
+              hackathon mentorship from Hareesha KoratikereRameshappa, using
+              Tuya T5-A1 boards provided by Tuya Smart.
+            </p>
+            <div class="win-callout">
+              <span>2nd Place</span>
+              <p>
+                Awarded in the AI + IoT Track at HackStorm 2.0 after a week of
+                assistive technology hackathon work and rapid embedded-systems
+                prototyping.
+              </p>
+            </div>
+          </div>
+
+          <blockquote class="vision-quote">
+            "We are living in the 21st century, with advanced technology around
+            us in almost every field, and AI has become part of daily life. Yet
+            blind people still have to sense the whole world with a cane. We
+            wanted to maximize the efficiency and usage of the cane."
+          </blockquote>
+        </div>
+
+        <div class="smart-panels">
+          <article class="smart-panel">
+            <h3>Josue&apos;s Hardware Contribution</h3>
+            <ul class="smart-list">
+              <li>Ultrasonic sensing for nearby forward obstacle detection.</li>
+              <li>Accelerometer logic to detect cane drops and fall events.</li>
+              <li>Buzzer feedback patterns for navigation assistance.</li>
+              <li>
+                Tuya T5-A1 board integration for AI + IoT hardware output.
+              </li>
+            </ul>
+          </article>
+
+          <article class="smart-panel">
+            <h3>Hardware</h3>
+            <div class="data-table hardware-table">
+              <div>Component</div>
+              <div>Role</div>
+              <div>HC-SR04 ultrasonic sensor</div>
+              <div>Forward obstacle detection from floor to chest height.</div>
+              <div>Camera with upward tilt</div>
+              <div>Mid-body hazards, overhangs, signs, and traffic lights.</div>
+              <div>IMU</div>
+              <div>Tilt, sudden drop, impact, and fall event detection.</div>
+              <div>Arduino Elegoo</div>
+              <div>Reads sensors and relays data to Python over serial USB.</div>
+              <div>Laptop / PC</div>
+              <div>Runs Python, computer vision, and AI logic.</div>
+              <div>Bone conduction earpiece</div>
+              <div>Audio alerts while keeping ears open to the environment.</div>
+            </div>
+          </article>
+        </div>
+
+        <div class="feature-grid" aria-label="SmartCane feature list">
+          <article class="feature-card">
+            <p>HC-SR04 ultrasonic</p>
+            <h3>Obstacle Detection</h3>
+            <p>
+              A fixed forward sensor alerts the user as they approach objects,
+              with beeps increasing from slow to fast to continuous.
+            </p>
+          </article>
+          <article class="feature-card">
+            <p>Camera</p>
+            <h3>Overhead Hazards</h3>
+            <p>
+              An upward camera angle watches for overhangs, open cabinet doors,
+              scaffolding, and low-hanging branches.
+            </p>
+          </article>
+          <article class="feature-card">
+            <p>Camera</p>
+            <h3>Stairs &amp; Drop-offs</h3>
+            <p>
+              Computer vision reads floor texture changes and step-edge
+              patterns before the user reaches a transition point.
+            </p>
+          </article>
+          <article class="feature-card">
+            <p>Camera</p>
+            <h3>Elevator Arrival</h3>
+            <p>
+              The model recognizes elevator doors opening in front of the user
+              and announces arrival through an earpiece.
+            </p>
+          </article>
+          <article class="feature-card">
+            <p>Camera</p>
+            <h3>Traffic Light Detection</h3>
+            <p>
+              Crosswalk signals are read continuously so the cane can speak
+              "green light" when it is safe to cross.
+            </p>
+          </article>
+          <article class="feature-card">
+            <p>Camera + GPT-4o Vision</p>
+            <h3>Scene Reading</h3>
+            <p>
+              A button-triggered frame capture describes objects, positions, and
+              recommended actions, such as an open bus door or nearby seat.
+            </p>
+          </article>
+          <article class="feature-card">
+            <p>IMU</p>
+            <h3>Fall Detection</h3>
+            <p>
+              A sudden cane drop or impact can trigger an SOS notification to a
+              companion phone app with GPS location.
+            </p>
+          </article>
+        </div>
+
+        <div class="smart-panels smart-panels--compact">
+          <article class="smart-panel">
+            <h3>Alert System</h3>
+            <div class="data-table compact-table">
+              <div>Alert type</div>
+              <div>Meaning</div>
+              <div>Slow to fast to continuous beep</div>
+              <div>Obstacle closing in.</div>
+              <div>Short vibration pulse</div>
+              <div>Obstacle nearby.</div>
+              <div>Long vibration pulse</div>
+              <div>Stair or drop-off ahead.</div>
+              <div>Voice through earpiece</div>
+              <div>Elevator arrival, green light, and scene reading output.</div>
+            </div>
+          </article>
+
+          <article class="smart-panel">
+            <h3>Tech Stack</h3>
+            <div class="tag-list smart-tags" aria-label="SmartCane tech stack">
+              <span>Python</span>
+              <span>OpenCV</span>
+              <span>YOLOv8</span>
+              <span>Ultralytics</span>
+              <span>GPT-4o Vision API</span>
+              <span>pyserial</span>
+              <span>pyttsx3</span>
+              <span>Arduino C++</span>
+              <span>python-dotenv</span>
+              <span>Flask</span>
+              <span>Groq</span>
+            </div>
+          </article>
+        </div>
+
+        <details class="repo-details">
+          <summary>Project Structure</summary>
+          <pre><code>HackStorm-2.0/
+|-- features/
+|   |-- overhead_hazard.py
+|   |-- stair_detection.py
+|   |-- elevator_alert.py
+|   |-- traffic_light.py
+|   |-- scene_reading.py
+|   `-- fall_detection.py
+|-- utils/
+|   |-- alert.py
+|   |-- camera.py
+|   `-- serial_reader.py
+|-- arduino/
+|   `-- sensors.ino
+|-- main.py
+|-- .env
+|-- .gitignore
+`-- README.md</code></pre>
+        </details>
+
+        <details class="repo-details">
+          <summary>Setup, Local Server, and Common Errors</summary>
+          <div class="setup-grid">
+            <div>
+              <h3>Run Locally</h3>
+              <ol>
+                <li>Install dependencies: <code>pip install flask opencv-python python-dotenv</code></li>
+                <li>Add <code>GROQ_API_KEY=gsk_...</code> to <code>.env</code>.</li>
+                <li>Run <code>python tools/smart_cane_app.py</code>.</li>
+                <li>Open <code>http://localhost:5000</code>.</li>
+              </ol>
+            </div>
+            <div>
+              <h3>Useful Fixes</h3>
+              <ul class="smart-list">
+                <li>Install Flask if <code>flask</code> is missing.</li>
+                <li>Install OpenCV if <code>cv2</code> is missing.</li>
+                <li>Try <code>--camera 1</code> if camera index 0 is unavailable.</li>
+                <li>Check <code>.env</code> if Groq returns a 401 error.</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <article class="smart-panel out-of-scope">
+          <h3>Out of Scope</h3>
+          <div class="tag-list smart-tags">
+            <span>Moving object tracking</span>
+            <span>Always-on scene reading</span>
+            <span>Indoor QR navigation</span>
+            <span>Surface / ramp detection</span>
+            <span>Crowd density mode</span>
+          </div>
+        </article>
+      </section>
+
       <section class="skills section-shell" id="skills" aria-labelledby="skills-title">
         <div class="section-heading">
           <p class="eyebrow">Skills</p>
@@ -165,7 +415,7 @@
           </div>
 
           <div class="skill-group">
-            <h3>Backend & APIs</h3>
+            <h3>Backend &amp; APIs</h3>
             <div class="skill-cloud">
               <span>Python</span>
               <span>Flask</span>
@@ -182,7 +432,7 @@
           </div>
 
           <div class="skill-group">
-            <h3>Systems & IoT</h3>
+            <h3>Systems &amp; IoT</h3>
             <div class="skill-cloud">
               <span>C</span>
               <span>C++</span>
@@ -212,13 +462,15 @@
         id="contact"
         aria-labelledby="contact-title"
       >
-        <div class="section-heading">
+        <h2 class="contact-title" id="contact-title">
+          Let&apos;s build the next useful thing.
+        </h2>
+        <div class="contact-details">
           <p class="eyebrow">Contact</p>
-          <h2 id="contact-title">Let&apos;s build the next useful thing.</h2>
+          <a class="email-link" href="mailto:josuecruz3830@gmail.com">
+            josuecruz3830@gmail.com
+          </a>
         </div>
-        <a class="email-link" href="mailto:josuecruz3830@gmail.com">
-          josuecruz3830@gmail.com
-        </a>
       </section>
     </main>
   </body>
